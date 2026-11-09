@@ -1,8 +1,27 @@
 # API REST - Raíz Urbana
 
-Back-end con Node.js, Express y PostgreSQL para administrar las postulaciones del proyecto anterior.
+API REST desarrollada para administrar las postulaciones de usuarios del programa comunitario Raíz Urbana. El proyecto continúa el formulario creado en la práctica anterior y permite almacenar sus datos en PostgreSQL.
 
-La explicación paso a paso para principiantes está en `GUIA_COMPLETA_POSTMAN.md`.
+## Tecnologías utilizadas
+
+- Node.js
+- Express
+- PostgreSQL
+- `pg` para la conexión entre Node.js y PostgreSQL
+- `dotenv` para las variables de entorno
+- Postman para probar los endpoints
+
+## Funcionalidades implementadas
+
+- Registro de usuarios.
+- Consulta de todos los usuarios.
+- Consulta de un usuario por ID.
+- Actualización de usuarios.
+- Eliminación de usuarios.
+- Validación de campos, correo, edad y zona de plantación.
+- Control de correos duplicados.
+- Respuestas HTTP para operaciones exitosas y errores.
+- Colección de Postman y registros iniciales para realizar pruebas.
 
 ## Sesión 1 - Node.js, Express y API REST
 
