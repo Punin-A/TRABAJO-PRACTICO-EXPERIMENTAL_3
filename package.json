@@ -1,0 +1,16 @@
+{
+  "name": "raiz-urbana-api",
+  "version": "1.0.0",
+  "description": "API REST de usuarios para el programa Raíz Urbana",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}

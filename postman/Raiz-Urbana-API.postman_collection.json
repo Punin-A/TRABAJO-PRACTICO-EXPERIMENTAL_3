@@ -1,0 +1,64 @@
+{
+  "info": {
+    "name": "Raíz Urbana API",
+    "description": "Pruebas CRUD de la API REST de usuarios.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" },
+    { "key": "usuarioId", "value": "1" }
+  ],
+  "item": [
+    {
+      "name": "Registrar usuario",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "if (pm.response.code === 201) {",
+              "  pm.collectionVariables.set('usuarioId', pm.response.json().id);",
+              "}"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"María López\",\n  \"correo\": \"maria.postman@example.com\",\n  \"edad\": 30,\n  \"telefono\": \"096 234 5678\",\n  \"zona\": \"escuela\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{baseUrl}}/usuarios"
+      }
+    },
+    {
+      "name": "Consultar usuarios",
+      "request": { "method": "GET", "url": "{{baseUrl}}/usuarios" }
+    },
+    {
+      "name": "Consultar usuario por ID",
+      "request": { "method": "GET", "url": "{{baseUrl}}/usuarios/{{usuarioId}}" }
+    },
+    {
+      "name": "Actualizar usuario",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"María López Actualizada\",\n  \"correo\": \"maria.postman@example.com\",\n  \"edad\": 31,\n  \"telefono\": \"096 234 5678\",\n  \"zona\": \"comunal\"\n}",
+          "options": { "raw": { "language": "json" } }
+        },
+        "url": "{{baseUrl}}/usuarios/{{usuarioId}}"
+      }
+    },
+    {
+      "name": "Eliminar usuario",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/usuarios/{{usuarioId}}" }
+    }
+  ]
+}
